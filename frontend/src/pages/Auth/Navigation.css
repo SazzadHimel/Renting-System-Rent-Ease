@@ -1,0 +1,44 @@
+#navigation-container{
+    width: 4%;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+#navigation-container:hover{
+    width: 15%;
+}
+
+.nav-item-name {
+    display: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#navigation-container:hover .nav-item-name {
+    display: block;
+    opacity: 1;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #fff;
+    width: 100%;
+    max-width: 300px;
+    z-index: 1;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.search-bar svg {
+    color: #fff;
+    cursor: pointer;
+}
