@@ -2,7 +2,6 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 
-// Ensure the uploads directory exists
 const ensureUploadsDir = () => {
     const dir = 'uploads/';
     if (!fs.existsSync(dir)) {

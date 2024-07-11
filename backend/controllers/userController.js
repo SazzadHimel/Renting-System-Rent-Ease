@@ -28,7 +28,7 @@ const createUser = asyncHandler(async (req, res) => {
         email,
         password: hashedPassword,
         isMerchant,
-        profilePicture: req.file ? req.file.path : null, // Set profile picture if uploaded
+        profilePicture: req.file ? req.file.path : null,
     });
 
     try {
@@ -41,7 +41,7 @@ const createUser = asyncHandler(async (req, res) => {
             email: newUser.email,
             isAdmin: newUser.isAdmin,
             isMerchant: newUser.isMerchant,
-            profilePicture: newUser.profilePicture, // Return profile picture path
+            profilePicture: newUser.profilePicture,
         });
     } catch (error) {
         console.error(error);
@@ -132,7 +132,7 @@ const updateCurrentUserProfile = asyncHandler(async (req, res) => {
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
         isMerchant: updatedUser.isMerchant,
-        profilePicture: updatedUser.profilePicture, // Return updated profile picture path
+        profilePicture: updatedUser.profilePicture,
     });
 });
 
@@ -148,7 +148,7 @@ const deleteUserByID = asyncHandler(async (req, res) => {
     }
 
     try {
-        await user.deleteOne(); // Use deleteOne method to delete the user
+        await user.deleteOne();
         res.json({ message: "User removed" });
     } catch (error) {
         res.status(500).json({ message: 'Failed to delete user' });
